@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đánh giá Thông điệp Tuyển dụng — Thang đo Sức hút Thương hiệu nhà tuyển dụng EmpAt</title>
+<title>Đánh giá Thông điệp Tuyển dụng - Thang đo Sức hút Thương hiệu nhà tuyển dụng EmpAt</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -793,7 +793,7 @@ function buildReading() {
   const weak = DIMS.filter(d => dimScore(d).sum <= 2).map(d => d.name);
   const mid = DIMS.filter(d => { const s = dimScore(d).sum; return s >= 3 && s <= 4 }).map(d => d.name);
   const strong = DIMS.filter(d => dimScore(d).sum >= 5).map(d => d.name);
-  let h = '<h3>Nhận định chuyên môn — Đánh giá cấu trúc Đề xuất giá trị tuyển dụng (EVP)</h3>';
+  let h = '<h3>Nhận định chuyên môn - Đánh giá cấu trúc Đề xuất giá trị tuyển dụng (EVP)</h3>';
   if (weak.length) h += `<p><strong>⚠️ Khoảng trống thông tin (≤ 2 điểm): ${weak.join(', ')}.</strong> Các giá trị thuộc nhóm này chưa được định hình rõ nét trên các điểm chạm tuyển dụng của Doanh nghiệp. Đối với thế hệ ứng viên trẻ vốn có hành vi chủ động nghiên cứu và đánh giá thương hiệu trước ứng tuyển, sự thiếu hụt này sẽ làm giảm đáng kể tỷ lệ cân nhắc nộp hồ sơ.</p>`;
   if (mid.length) h += `<p><strong>⚡ Đã đề cập nhưng thiếu tính thuyết phục (3–4 điểm): ${mid.join(', ')}.</strong> Thông điệp tuyển dụng hiện tại đang dừng lại ở mức mô tả mang tính định tính. Doanh nghiệp cần tích cực tích hợp các minh chứng thực tế (số liệu cụ thể, hình ảnh trực quan, trải nghiệm thực tế từ nhân viên) thay vì sử dụng các cấu trúc văn bản lý thuyết thông thường.</p>`;
   if (strong.length) h += `<p><strong>✨ Lợi thế cạnh tranh vượt trội (5–6 điểm): ${strong.join(', ')}.</strong> Đây là những giá trị cốt lõi mà doanh nghiệp đang truyền tải rất tốt. Khuyến nghị Anh/Chị đưa các thông điệp này vào các vị trí chiến lược (tiêu đề, phần mở đầu của JD hoặc điểm nhấn của chiến dịch EB) để tối ưu hóa tỷ lệ chuyển đổi nguồn ứng viên chất lượng cao.</p>`;
@@ -807,7 +807,7 @@ document.getElementById('btn-pdf').addEventListener('click', () => {
   const today = new Date().toLocaleDateString('vi-VN');
   let h = `
     <div class="p-eyebrow">Upzi · Báo cáo đánh giá EVP</div>
-    <h1>Đánh giá Sức hút Thương hiệu nhà tuyển dụng — Kết quả phân tích</h1>
+    <h1>Đánh giá Sức hút Thương hiệu nhà tuyển dụng - Kết quả phân tích</h1>
     <div class="p-date">Ngày thực hiện: ${today}</div>
     <table class="p-summary">
       <tr><th>Nhóm giá trị thuộc Thang đo EmpAt</th><th class="p-score">Điểm số</th></tr>`;
@@ -819,7 +819,7 @@ document.getElementById('btn-pdf').addEventListener('click', () => {
   h += `<tr><td><strong>Tổng điểm EVP đạt được</strong></td><td class="p-score"><strong>${total}/30</strong></td></tr></table>`;
   h += `<table><tr><th>Tiêu chí đánh giá chi tiết</th><th class="p-score">Điểm số</th></tr>`;
   DIMS.forEach(d => {
-    h += `<tr class="p-dim-row"><td colspan="2">${d.name} — ${d.sub}</td></tr>`;
+    h += `<tr class="p-dim-row"><td colspan="2">${d.name} - ${d.sub}</td></tr>`;
     d.qs.forEach((q, qi) => {
       const v = answers[`${d.key}-${qi}`];
       h += `<tr><td>${q}</td><td class="p-score">${v === undefined ? '–' : v}</td></tr>`;
@@ -830,7 +830,7 @@ document.getElementById('btn-pdf').addEventListener('click', () => {
   if (done === TOTAL_Q) {
     h += `<div class="p-reading">${buildReading().replace(/<h3>.*?<\/h3>/, '<strong>Khuyến nghị từ Ban tư vấn:</strong><br>')}</div>`;
   }
-  h += `<div class="p-src">Báo cáo kiểm toán định vị EVP được xây dựng dựa trên mô hình học thuật EmpAt — Berthon, P., Ewing, M., &amp; Hah, L.L. (2005). "Captivating company: dimensions of attractiveness in employer branding". International Journal of Advertising, 24(2), 151–172. Bản quyền chuẩn hóa tiêu chí thuộc Team Upzi.</div>`;
+  h += `<div class="p-src">Báo cáo kiểm toán định vị EVP được xây dựng dựa trên mô hình học thuật EmpAt - Berthon, P., Ewing, M., &amp; Hah, L.L. (2005). "Captivating company: dimensions of attractiveness in employer branding". International Journal of Advertising, 24(2), 151–172. Bản quyền chuẩn hóa tiêu chí thuộc Team Upzi.</div>`;
   rep.innerHTML = h;
   window.print();
 });
