@@ -92,6 +92,25 @@
     color: var(--ink);
   }
 
+  /* ---------- guide download button (trong dock) ---------- */
+  .btn-guide {
+    flex: none;
+    background: #fff;
+    color: var(--purple-deep);
+    text-decoration: none;
+    border: 1.5px solid var(--purple);
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13.5px;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+  }
+  .btn-guide:hover {
+    background: var(--purple);
+    color: #fff;
+  }
+
   /* ---------- how to ---------- */
   .howto {
     background: var(--card);
@@ -456,6 +475,17 @@
     .seg {
       justify-content: flex-end;
     }
+    .dock-in {
+      gap: 8px;
+      padding: 12px 14px;
+    }
+    .prog-label {
+      display: none;
+    }
+    .btn-guide, .btn-pdf {
+      padding: 11px 12px;
+      font-size: 12.5px;
+    }
   }
   @media(prefers-reduced-motion:reduce) {
     * {
@@ -611,6 +641,7 @@
       <div class="prog-label" id="prog-label">0 / 15 tiêu chí</div>
       <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
     </div>
+    <a class="btn-guide" href="./cam-nang-toi-uu-JD.pdf" download>Tải cẩm nang JD</a>
     <button class="btn-pdf" id="btn-pdf" disabled>Tải báo cáo phân tích PDF</button>
   </div>
 </div>
